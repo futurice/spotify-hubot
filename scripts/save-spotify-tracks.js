@@ -20,10 +20,11 @@ var env = {
     playlist: process.env.HUBOT_SPOTIFY_PLAYLIST
 };
 
-const spotify_link_regex = /spotify.com/; // /((http|https)://(open|play).spotify.com/track/)|(spotify:track:)\S+/;
+const spotify_link_regex = new RegExp('(https?://(open|play).spotify.com/track/|spotify:track:)\\S+');
 
 module.exports = function(robot) {
     robot.hear(spotify_link_regex, function(msg) {
+        console.log('test')
         if (!env.username) {
             msg.send("Please set the HUBOT_SPOTIFY_USERNAME environment variable.");
             return;
