@@ -27,8 +27,7 @@
   "dependencies": {
     "hubot-flowdock": "*",
     "hubot":          "2.x",
-    "hubot-scripts":  "2.x",
-    "node-spotify": "*"
+    "hubot-scripts":  "2.x"
   },
 
   "engines": {
