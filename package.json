@@ -29,6 +29,7 @@
     "hubot-flowdock": "*",
     "hubot":          "2.x",
     "hubot-scripts":  "2.x"
+    "lodash":         "*"
   },
 
   "engines": {
