@@ -21,6 +21,14 @@ Add following environment variables to heroku:
     heroku config:add HUBOT_SPOTIFY_PLAYLIST=spotify:user:myusername:playlist:7sXq7x8V17JIRzYJKw5v9o
 
 
+Use this buildpack: https://github.com/ddollar/heroku-buildpack-multi
+and it will use [.buildpacks](.buildpacks) file to use multiple buildpacks at the same time
+
+
+## Spotify specific stuff
+
+node-spotify uses libspotify underneath. Installing to OSX: `brew install libspotify`
+
 # Hubot
 
 This is a version of GitHub's Campfire bot, hubot. He's pretty cool.
