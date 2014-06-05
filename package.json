@@ -1,5 +1,5 @@
 {
-  "name": "hosted-futubro",
+  "name": "hosted-spotify-hubot",
   "version": "0.0.1",
   "private": true,
 
@@ -9,7 +9,8 @@
     "futurice",
     "hubot",
     "flowdock",
-    "bot"
+    "bot",
+    "spotify"
   ],
 
   "description": "A simple helpful robot for your Company",

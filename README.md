@@ -1,3 +1,26 @@
+# Spotify Hubot
+
+This bot listens for all spotify links in flowdock and adds them to a Spotify playlist.
+
+You need:
+
+* Heroku account
+* NodeJS 'n stuff
+* Spotify premium account
+
+
+First configure Hubot with its adapters and get it responding to something and then proceed with these instructions:
+
+Copy your spotify appkey to the base of the repository named as `spotify_appkey.key`. Get application key from here: https://developer.spotify.com/technologies/libspotify/#application-keys.
+
+Add following environment variables to heroku:
+
+    heroku config:add HUBOT_SPOTIFY_APPKEY=`node appkey-to-base64.js`
+    heroku config:add HUBOT_SPOTIFY_USERNAME=username
+    heroku config:add HUBOT_SPOTIFY_PASSWORD=password
+    heroku config:add HUBOT_SPOTIFY_PLAYLIST=spotify:user:myusername:playlist:7sXq7x8V17JIRzYJKw5v9o
+
+
 # Hubot
 
 This is a version of GitHub's Campfire bot, hubot. He's pretty cool.
@@ -139,7 +162,7 @@ UI.
     % heroku config:set HUBOT_CAMPFIRE_TOKEN="..."
 
 Get the numeric IDs of the rooms you want the bot to join, comma delimited. If
-you want the bot to connect to `https://mysubdomain.campfirenow.com/room/42` 
+you want the bot to connect to `https://mysubdomain.campfirenow.com/room/42`
 and `https://mysubdomain.campfirenow.com/room/1024` then you'd add it like this:
 
     % heroku config:set HUBOT_CAMPFIRE_ROOMS="42,1024"
