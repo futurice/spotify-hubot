@@ -1,2 +1,7 @@
-node_modules
+# you can skip this first one if it is not already excluded by prior patterns
+!application/
+
+application/*
+!application/*.js
+
 .DS_Store*
