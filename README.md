@@ -8,10 +8,9 @@ You need:
 * NodeJS 'n stuff
 * Spotify premium account
 
-
 This bot uses [Flowdock adapter](https://github.com/flowdock/hubot-flowdock). First configure Hubot with its adapters and get it responding to something and then proceed with these instructions:
 
-Copy your spotify appkey to the base of the repository named as `spotify_appkey.key`. Get application key from here: https://developer.spotify.com/technologies/libspotify/#application-keys (choose binary, not C-code).
+Copy your Spotify application key to the base of the repository named as `spotify_appkey.key`. Get application key from here: https://developer.spotify.com/technologies/libspotify/#application-keys (choose binary, not C-code).
 
 Add following environment variables to heroku:
 
@@ -20,14 +19,26 @@ Add following environment variables to heroku:
     heroku config:add HUBOT_SPOTIFY_PASSWORD=password
     heroku config:add HUBOT_SPOTIFY_PLAYLIST=spotify:user:myusername:playlist:7sXq7x8V17JIRzYJKw5v9o
 
+*Variables explained:*
+
+* `HUBOT_SPOTIFY_APPKEY` - Spotify application key in base64 format. You can use [appkey-to-base64.js](appkey-to-base64.js) tool to convert your key into proper format.
+* `HUBOT_SPOTIFY_USERNAME` - Spotify username(must be premium account)
+* `HUBOT_SPOTIFY_PASSWORD` - Spotify password
+* `HUBOT_SPOTIFY_PLAYLIST` - Spotify playlist URI where all linked tracks are added to.
+
+[node-spotify](node-spotify.com) uses libspotify underneath, so you'll need libspotify installed in Heroku. It can be easily added with [libspotify buildpack](https://github.com/bolster/heroku-libspotify-buildpack). Also you need nodejs buildback provided by Heroku.
 
 Use this buildpack: https://github.com/ddollar/heroku-buildpack-multi
-and it will use [.buildpacks](.buildpacks) file to use multiple buildpacks at the same time
+and it will use [.buildpacks](.buildpacks) file to use multiple buildpacks at the same time.
 
 
-## Spotify specific stuff
+If you want to test locally in OS X, you'll need to install libspotify: `brew install libspotify`. After that, you can start the bot in local test environment:
 
-node-spotify uses libspotify underneath. Installing to OSX: `brew install libspotify`
+    export HUBOT_SPOTIFY_APPKEY=`node appkey-to-base64.js`
+    export HUBOT_SPOTIFY_USERNAME=username
+    export HUBOT_SPOTIFY_PASSWORD=password
+    export HUBOT_SPOTIFY_PLAYLIST=spotify:user:myusername:playlist:7sXq7x8V17JIRzYJKw5v9o
+    ./bin/hubot
 
 # Hubot in general
 
